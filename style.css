@@ -1,0 +1,36 @@
+body{
+    background-color:darkblue;
+    margin-top:3rem;
+}
+#message{
+    text-align: center;
+    color:bisque;
+    font-size: 2rem;
+    font-family: 'Press Start 2P', cursive;;
+}
+button{
+    width:10rem;
+    height:10rem;
+    border-radius: 20%;
+    border: .5rem solid black;
+    margin: 1rem;
+}
+.button-container{
+    text-align: center;
+}
+#green{
+    background-color:green;
+}
+#red{
+    background-color:red;
+}
+#yellow{
+    background-color:yellow;
+}
+#blue{
+    background-color:blue;
+}
+.flash{
+    box-shadow: 0 0 20px white;
+    background-color: grey!important;
+}
