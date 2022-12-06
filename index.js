@@ -60,7 +60,7 @@ function AnimH(i){
     (new Audio("sounds/"+bts[moves[i]]+".mp3")).play();
     $("#"+bts[moves[i]]).addClass("flash");
     setTimeout(function(){
-        document.querySelector("#"+bts[moves[i]]).classList.remove("flash")},200);
+        document.querySelector("#"+bts[moves[i]]).classList.remove("flash")},50);
 }
 
 // Checks if user click is right
