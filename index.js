@@ -32,7 +32,7 @@ $("button").on("click",function(){
 
 // Level up after every right pattern
 function levelUp(){
-    $("h1").text("Level "+ (++level));
+    $("#level-text").text("Level "+ (++level));
 }
 
 // Play computer pattern
@@ -79,7 +79,7 @@ function check(id){
         }
         else{                               //If any button is wrongly pressed, stop game.
             (new Audio("sounds/wrong.mp3")).play();
-            $("h1").text("Game Over! Press Start to play again. Score: "+(level-1));
+            $("#msg").text("Game Over! Press Start to play again. Score: "+(level-1));
             $(".front").show();
             start();
         }
