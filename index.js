@@ -5,7 +5,7 @@ var level;
 var move_number;
 var moves=[];
 var bts=["green","red","yellow","blue"];
-var sounds=[new Audio("sounds/green.mp3"),new Audio("sounds/red.mp3"),new Audio("sounds/yellow.mp3"),new Audio("sounds/blue.mp3"),new Audio("sounds/wrong.mp3")];
+var sounds={"green": new Audio("sounds/green.mp3"),"red":new Audio("sounds/red.mp3"),"yellow":new Audio("sounds/yellow.mp3"),"blue":new Audio("sounds/blue.mp3"),"wrong":new Audio("sounds/wrong.mp3")};
 start();
 
 // Game resetter
@@ -51,7 +51,7 @@ function play(){
 // Computer Animation with delay between button presses
 function AnimC(i){
     setTimeout(function(){
-    sounds[moves[i]].play();
+    sounds[bts[moves[i]]].play();
     $("#"+bts[moves[i]]).addClass("flash");
     setTimeout(function(){
         document.querySelector("#"+bts[moves[i]]).classList.remove("flash")},200);
@@ -66,7 +66,6 @@ function AnimC(i){
 
 // User button Animation with no delay between button presses
 function AnimH(i){
-    sounds[moves[i]].play();
     $("#"+bts[moves[i]]).addClass("flash");
     setTimeout(function(){
         document.querySelector("#"+bts[moves[i]]).classList.remove("flash")},50);
@@ -74,6 +73,7 @@ function AnimH(i){
 
 // Checks if user click is right
 function check(id){
+    sounds[id].play();
     if(bts[moves[move_number]]==id){
             AnimH(move_number++);           //Animate current press
             if(move_number==moves.length){  //If all buttons are pressed right
@@ -87,7 +87,7 @@ function check(id){
             }
         }
         else{                               //If any button is wrongly pressed, stop game.
-            sounds[4].play();
+            sounds["wrong"].play();
             $("#msg").text("Game Over! Score: "+(level-1));
             start();
         }
