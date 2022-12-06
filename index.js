@@ -79,7 +79,7 @@ function check(id){
         }
         else{                               //If any button is wrongly pressed, stop game.
             (new Audio("sounds/wrong.mp3")).play();
-            $("h1").text("Game Over! Press Start to play again. Highscore: "+(level-1));
+            $("h1").text("Game Over! Press Start to play again. Score: "+(level-1));
             $(".front").show();
             start();
         }
