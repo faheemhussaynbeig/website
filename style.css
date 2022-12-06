@@ -6,6 +6,11 @@ body{
     margin-top:3rem;
 }
 
+.turn{
+    margin:0;
+    padding:0;
+    color:white;
+}
 .ruler{
     display: inline;
     font-size: 1rem!important;

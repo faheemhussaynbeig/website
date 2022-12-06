@@ -40,12 +40,11 @@ function levelUp(){
 
 // Play computer pattern
 function play(){
+    $(".turn").text("Turn: Computer");
     levelUp();
     moves.push(Math.floor(Math.random()*4));
     for(var i=0;i<moves.length;i++)
-        AnimC(i);
-    clicker=true;
-       
+        AnimC(i);  
 }
 
 // Computer Animation with delay between button presses
@@ -55,7 +54,13 @@ function AnimC(i){
     $("#"+bts[moves[i]]).addClass("flash");
     setTimeout(function(){
         document.querySelector("#"+bts[moves[i]]).classList.remove("flash")},200);
-    },400*i);
+        if(i==moves.length-1){               //Enable clicker after computer completes sequence
+            clicker=true;
+            setTimeout(function(){
+                $(".turn").text("Turn: Player");
+            },400)   
+        }
+    },400*i); 
 }
 
 // User button Animation with no delay between button presses
@@ -73,7 +78,7 @@ function check(id){
             if(move_number==moves.length){  //If all buttons are pressed right
                 if(level>highscore)         //Check for High Score
                     $("#highscore").text("Highscore: "+(++highscore));
-                clicker=false;             //Disable button after sequence ends
+                clicker=false;             //Disable clicker after sequence ends
                 move_number=0;              //reset move index
                 setTimeout(function(){      //Add delay between user move and next computer pattern
                     play();                 //Call play function for next sequence
