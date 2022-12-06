@@ -1,22 +1,76 @@
 body{
+    margin: 0;
+    padding: 0;
     background-color:darkblue;
     margin-top:3rem;
 }
-#message{
+.message{
     text-align: center;
     color:bisque;
     font-size: 2rem;
-    font-family: 'Press Start 2P', cursive;;
+    font-family: 'Press Start 2P', cursive;
+    line-height:1.5;
+}
+#highscore{
+    font-size: 1.5rem;
+}
+
+.btn {
+    position: relative;
+    background: #323333;
+    background-image: -webkit-linear-gradient(top, #323333, #0268a8);
+    background-image: -moz-linear-gradient(top, #323333, #0268a8);
+    background-image: -ms-linear-gradient(top, #323333, #0268a8);
+    background-image: -o-linear-gradient(top, #323333, #0268a8);
+    background-image: linear-gradient(to bottom, #323333, #0268a8);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 70%;
+    border-radius: 10%;
+    text-shadow: 0px 1px 3px #666666;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    font-family: 'Press Start 2P', cursive;
+    color: #ffffff;
+    font-size: 2rem;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+  }
+
+.front{
+    text-align:center;
+    margin: 0;
+    padding-top: 10%;
+    position: absolute;
+    top:0;
+    height:100%;
+    width:100%;
+    background-color: black;
+    
+    border: solid white;
 }
 button{
-    width:10rem;
-    height:10rem;
-    border-radius: 20%;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 25%;
     border: .5rem solid black;
     margin: 1rem;
 }
 .button-container{
-    text-align: center;
+    margin: auto;
+    display: block;
+    width: 50%;
 }
 #green{
     background-color:green;
@@ -33,4 +87,7 @@ button{
 .flash{
     box-shadow: 0 0 20px white;
     background-color: grey!important;
+}
+.row{
+    text-align: center;
 }
