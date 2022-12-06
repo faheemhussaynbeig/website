@@ -6,6 +6,11 @@ body{
     margin-top:3rem;
 }
 
+.ruler{
+    display: inline;
+    font-size: 1rem!important;
+}
+
 .message{
     text-align: center;
     color:bisque;
@@ -54,7 +59,7 @@ body{
 .front{
     text-align:center;
     margin: 0;
-    padding-top: 15%;
+    padding-top: 10%;
     position: absolute;
     top:0;
     height:100%;
@@ -66,9 +71,10 @@ body{
     display: block;
     width: 50%;
     margin: auto;
+    padding-top: 0;
   }
 button{
-    margin: 25px;
+    margin: 10px;
     display: inline-block;
     height: 13rem;
     width: 13rem;
