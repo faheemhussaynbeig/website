@@ -5,6 +5,7 @@ var level;
 var move_number;
 var moves=[];
 var bts=["green","red","yellow","blue"];
+var sounds=[new Audio("sounds/green.mp3"),new Audio("sounds/red.mp3"),new Audio("sounds/yellow.mp3"),new Audio("sounds/blue.mp3"),new Audio("sounds/wrong.mp3")];
 start();
 
 // Game resetter
@@ -50,7 +51,7 @@ function play(){
 // Computer Animation with delay between button presses
 function AnimC(i){
     setTimeout(function(){
-    (new Audio("sounds/"+bts[moves[i]]+".mp3")).play();
+    sounds[i].play();
     $("#"+bts[moves[i]]).addClass("flash");
     setTimeout(function(){
         document.querySelector("#"+bts[moves[i]]).classList.remove("flash")},200);
@@ -65,7 +66,7 @@ function AnimC(i){
 
 // User button Animation with no delay between button presses
 function AnimH(i){
-    (new Audio("sounds/"+bts[moves[i]]+".mp3")).play();
+    sounds[i].play();
     $("#"+bts[moves[i]]).addClass("flash");
     setTimeout(function(){
         document.querySelector("#"+bts[moves[i]]).classList.remove("flash")},50);
@@ -86,7 +87,7 @@ function check(id){
             }
         }
         else{                               //If any button is wrongly pressed, stop game.
-            (new Audio("sounds/wrong.mp3")).play();
+            sounds[4].play();
             $("#msg").text("Game Over! Score: "+(level-1));
             start();
         }
