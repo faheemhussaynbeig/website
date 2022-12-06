@@ -51,7 +51,7 @@ function play(){
 // Computer Animation with delay between button presses
 function AnimC(i){
     setTimeout(function(){
-    sounds[i].play();
+    sounds[moves[i]].play();
     $("#"+bts[moves[i]]).addClass("flash");
     setTimeout(function(){
         document.querySelector("#"+bts[moves[i]]).classList.remove("flash")},200);
@@ -66,7 +66,7 @@ function AnimC(i){
 
 // User button Animation with no delay between button presses
 function AnimH(i){
-    sounds[i].play();
+    sounds[moves[i]].play();
     $("#"+bts[moves[i]]).addClass("flash");
     setTimeout(function(){
         document.querySelector("#"+bts[moves[i]]).classList.remove("flash")},50);
