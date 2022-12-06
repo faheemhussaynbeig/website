@@ -9,6 +9,8 @@ start();
 
 // Game resetter
 function start(){
+    $(".container").hide();
+    $(".front").show();
     clicker=false;
     level=0;
     move_number=0;
@@ -20,6 +22,7 @@ function start(){
 $(".btn").on("click",function(){
     if(!level){
         $(".front").hide();
+        $(".container").show();
         play();
     }
 });
@@ -80,7 +83,6 @@ function check(id){
         else{                               //If any button is wrongly pressed, stop game.
             (new Audio("sounds/wrong.mp3")).play();
             $("#msg").text("Game Over!Press Start to play again. Score: "+(level-1));
-            $(".front").show();
             start();
         }
 }
